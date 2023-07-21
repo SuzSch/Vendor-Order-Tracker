@@ -4,18 +4,17 @@ namespace VendorOrderTracker.Models
 {
   public class Vendor
   {
-    public string VendorName { get; set; }
-    private static List<Vendor> _instances = new List<Vendor> { };
+    public string BusinessName { get; set; }
+    public string MangerName { get; set; }
+    public string ContactEmail { get; set; }
+    public int PhoneNumber { get; set; }
 
-    public Vendor(string vendorname)
+    public Vendor(string businessName, string contactEmail, string contactEmail, int phoneNumber)
     {
-      VendorName = vendorname;
-      _instances.Add(this);
-    }
-
-    public static List<Vendor> GetAll()
-    {
-      return _instances;
+      BusinessName = businessNamename;
+      Name = name;
+      ContactEmail = contactEmail;
+      PhoneNumber = phoneNumber;
     }
 
   }
