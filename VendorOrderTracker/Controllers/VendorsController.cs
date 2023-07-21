@@ -11,7 +11,7 @@ namespace VendorOrderTracker.Controllers
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
-      List<Vendor> allVendors = List.GetAll();
+      List<string> allVendors = List.GetAll();
       return View(allVendors);
     }
 

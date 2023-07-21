@@ -9,10 +9,10 @@ namespace VendorOrderTracker.Models
     public string ContactEmail { get; set; }
     public int PhoneNumber { get; set; }
 
-    public Vendor(string businessName, string contactEmail, string contactEmail, int phoneNumber)
+    public Vendor(string businessName, string managerName, string contactEmail, int phoneNumber)
     {
-      BusinessName = businessNamename;
-      Name = name;
+      BusinessName = businessName;
+      MangerName = managerName;
       ContactEmail = contactEmail;
       PhoneNumber = phoneNumber;
     }
