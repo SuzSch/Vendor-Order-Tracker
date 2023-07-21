@@ -16,7 +16,16 @@ namespace VendorOrderTracker.Controllers
     }
 
     [HttpGet("/vendors/new")]
-    public ActionResult 
+    public ActionResult CreateForm()
+    {
+      return View();
+    }
 
+    [HttpPost("/vendors")]
+    public ActionResult Create(string vendorName)
+    {
+      Vendor newVendor = new Vendor(vendorName);
+      return RedirectToAction("Index");
+    }
   }
 }
