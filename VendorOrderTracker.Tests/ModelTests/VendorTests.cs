@@ -6,5 +6,13 @@ namespace VendorOrderTracker.Tests
   [TestClass]
   public class VendorTests
   {
-    
+    [TestMethod]
+    public void VendorConstructor_CreateVendor_Vendor()
+    {
+
+      Vendor newVendor = new Vendor();
+      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+    }
+
   }
+}
