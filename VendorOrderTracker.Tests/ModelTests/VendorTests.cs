@@ -35,12 +35,11 @@ namespace VendorOrderTracker.Tests
       Assert.IsNotNull(newVendor.Orders);
     }
     [TestMethod]
-    public void GetId_ReturnsVendorId_Int()
+    public void VendorId_SetUniqueVendorId_Vendor()
     {
-      string vendor = "Jane's Buns";
-      Vendor newVendor = new Vendor(vendor);
-      int result = newVendor.Id;
-      Assert.AreEqual(1, result);
+      Vendor newVendor1 = new Vendor();
+      Vendor newVendor2 = new Vendor();
+      Assert.AreNotEqual(newVendor1.VendorId, newVendor2.VendorId, "Vendor IDs should be unique.");
     }
   }
 }
