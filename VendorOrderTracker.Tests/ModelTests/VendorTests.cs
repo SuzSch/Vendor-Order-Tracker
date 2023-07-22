@@ -35,8 +35,12 @@ namespace VendorOrderTracker.Tests
       Assert.IsNotNull(newVendor.Orders);
     }
     [TestMethod]
-
-    public void VendorId_SetVendorId_IdIsSet()
-
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string vendor = "Jane's Buns";
+      Vendor newVendor = new Vendor(vendor);
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }
