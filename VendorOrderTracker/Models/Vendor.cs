@@ -9,5 +9,8 @@ namespace VendorOrderTracker.Models
     public string VendorEmail { get; set; }
     public string VendorPhoneNumber { get; set; }
     public List<Order> Orders { get; set; }
+    public int VendorId { get; set; }
   }
+
+  
 }

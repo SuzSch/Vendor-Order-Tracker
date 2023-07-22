@@ -7,6 +7,7 @@ namespace VendorOrderTracker.Tests
   [TestClass]
   public class VendorTests
   {
+
     [TestMethod]
     public void VendorConstructor_CreateVendor_Vendor()
     {
@@ -33,5 +34,9 @@ namespace VendorOrderTracker.Tests
       Assert.AreEqual("123-456-7890", newVendor.VendorPhoneNumber);
       Assert.IsNotNull(newVendor.Orders);
     }
+    [TestMethod]
+
+    public void VendorId_SetVendorId_IdIsSet()
+
   }
 }
