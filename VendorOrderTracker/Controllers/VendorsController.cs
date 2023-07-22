@@ -11,12 +11,12 @@ namespace VendorOrderTracker.Controllers
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
-      List<Vendor> allVendors = new List<Vendor>();
+      List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
     }
 
     [HttpGet("/vendors/new")]
-    public ActionResult CreateForm()
+    public ActionResult New()
     {
       return View();
     }

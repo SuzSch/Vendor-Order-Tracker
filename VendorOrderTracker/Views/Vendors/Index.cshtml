@@ -9,14 +9,7 @@
 </head>
 
 <body>
-  <h1>Vendor List</h1>
-  <ul>
-    @foreach (Vendor vendor in Model)
-    {
-      <li>@vendor.VendorName</li>
-
-      <a href="/vendor/new">Add a new vendor.</a>
-    }
+  @using VendorOrderTracker.Models;
   </ul>
 </body>
 
