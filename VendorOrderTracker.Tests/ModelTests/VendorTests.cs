@@ -39,7 +39,18 @@ namespace VendorOrderTracker.Tests
     {
       Vendor newVendor1 = new Vendor();
       Vendor newVendor2 = new Vendor();
-      Assert.AreNotEqual(newVendor1.VendorId, newVendor2.VendorId, "Vendor IDs should be unique.");
+      Assert.AreNotEqual(newVendor1.VendorId, newVendor2.VendorId);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      string vendor01 = "Jane's Buns";
+      string vendor02 = "Mike's Cookies";
+      Vendor newVendor1 = new Vendor(vendor01);
+      Vendor newVendor2 = new Vendor(vendor02);
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newVendor2, result);
     }
   }
 }
