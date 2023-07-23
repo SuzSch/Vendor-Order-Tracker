@@ -8,7 +8,7 @@ namespace VendorOrderTracker.Models
     {
       _instances.Clear();
     }
-    private static int lastVendorId = 0;
+    
     private static List<Vendor> _instances = new List<Vendor>();
 
     public string Name { get; set; }

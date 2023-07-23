@@ -27,10 +27,10 @@ namespace VendorOrderTracker.Tests
       DateTime date = new DateTime(2023, 12, 01);
 
 
-      Assert.AreEqual("Winter Holiday 2023 Order", newOrder.Title);
-      Assert.AreEqual("Two dozen of each holiday cookie", newOrder.Description);
-      Assert.AreEqual(200, newOrder.Price);
-      Assert.AreEqual(new DateTime(2023, 12, 01), newOrder.Date);
+      Assert.AreEqual(title, newOrder.Title);
+      Assert.AreEqual(description, newOrder.Description);
+      Assert.AreEqual(price, newOrder.Price);
+      Assert.AreEqual(date, newOrder.Date);
     }
 
     [TestMethod]
@@ -53,6 +53,14 @@ namespace VendorOrderTracker.Tests
       Assert.AreEqual(newDescription, newOrder.Description);
       Assert.AreEqual(newPrice, newOrder.Price);
       Assert.AreEqual(newDate, newOrder.Date);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newList = new List<Order> { };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
