@@ -90,5 +90,18 @@ namespace ToDoList.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      //Arrange
+      string title = "Winter Holiday 2023 Order";
+      string description = "Two dozen of each holiday cookie";
+      int price = 200;
+      DateTime date = new DateTime(2023, 12, 01);
+      Order newOrder = new Order(title, description, price, date);
+      int result = newOrder.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }
