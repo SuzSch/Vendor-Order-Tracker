@@ -94,7 +94,6 @@ namespace ToDoList.Tests
     [TestMethod]
     public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
     {
-      //Arrange
       string title = "Winter Holiday 2023 Order";
       string description = "Two dozen of each holiday cookie";
       int price = 200;
@@ -102,6 +101,24 @@ namespace ToDoList.Tests
       Order newOrder = new Order(title, description, price, date);
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string title01 = "Valentine's Day 2024 Order";
+      string description01 = "10 dozen red velvet cupcakes";
+      int price01 = 400;
+      DateTime date01 = new DateTime(2024, 2, 01);
+
+      string title02 = "Winter Holiday 2023 Order";
+      string description02 = "Two dozen of each holiday cookie";
+      int price02 = 200;
+      DateTime date02 = new DateTime(2023, 12, 01);
+
+      Order newOrder1 = new Order(title01, description01, price01, date01);
+      Order newOrder2 = new Order(title02, description02, price02, date02);
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder2, result);
     }
   }
 }
