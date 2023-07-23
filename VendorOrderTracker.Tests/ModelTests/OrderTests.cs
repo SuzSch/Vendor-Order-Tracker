@@ -11,7 +11,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreateOrder_Order()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order("Winter Holiday 2023 Order", "Two dozen of each holiday cookie", 200, new DateTime(2023, 12, 01));
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -19,7 +19,7 @@ namespace VendorOrderTracker.Tests
 
     public void OrderProperties_UpdateOrderProperties_Order()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order("Winter Holiday 2023 Order", "Two dozen of each holiday cookie", 200, new DateTime(2023, 12, 01));
 
       newOrder.Title = "Winter Holiday 2023 Order";
       newOrder.Description = "Two dozen of each holiday cookie";
