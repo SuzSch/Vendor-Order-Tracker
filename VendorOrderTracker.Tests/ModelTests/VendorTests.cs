@@ -77,5 +77,15 @@ namespace VendorOrderTracker.Tests
       List<Order> results = newVendor.Orders;
       CollectionAssert.AreEqual(new List<Order> { newOrder }, results);
     }
+    public void GetAll_ReturnsAllVendors_VendorList()
+    {
+      string vendor01 = "Jane's Buns";
+      string vendor02 = "Mike's Cookies";
+      Vendor newVendor1 = new Vendor(vendor01, "Cafe", "jane@buns.com", 123 - 123 - 1234, 1);
+      Vendor newVendor2 = new Vendor(vendor02, "Grocery", "mike@cookies.com", 345 - 345 - 3456, 2);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+      List<Vendor> result = Vendor.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
