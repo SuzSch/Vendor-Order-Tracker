@@ -5,12 +5,12 @@ namespace VendorOrderTracker.Models
 {
   public class Order
   {
-    private static List<Order> _instances = new List<Order> { };
-
     public string Title { get; set; }
     public string Description { get; set; }
     public int Price { get; set; }
     public DateTime Date { get; set; }
+    
+    private static List<Order> _instances = new List<Order> { };
 
     public Order(string title, string description, int price, DateTime date)
     {
@@ -18,10 +18,16 @@ namespace VendorOrderTracker.Models
       Description = description;
       Price = price;
       Date = date;
+      _instances.Add(this);
     }
     public static List<Order> GetAll()
     {
       return _instances;
     }
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
   }
 }

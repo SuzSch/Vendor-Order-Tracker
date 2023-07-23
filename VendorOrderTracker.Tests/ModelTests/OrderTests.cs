@@ -3,11 +3,17 @@ using VendorOrderTracker.Models;
 using System.Collections.Generic;
 using System;
 
-namespace VendorOrderTracker.Tests
+namespace ToDoList.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class ItemTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreateOrder_Order()
     {
@@ -79,8 +85,9 @@ namespace VendorOrderTracker.Tests
       Order newOrder1 = new Order(title01, description01, price01, date01);
       Order newOrder2 = new Order(title02, description02, price02, date02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
-      
+
       List<Order> result = Order.GetAll();
+
       CollectionAssert.AreEqual(newList, result);
     }
   }
