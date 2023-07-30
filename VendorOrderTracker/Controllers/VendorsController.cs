@@ -5,7 +5,7 @@ using VendorOrderTracker.Models;
 
 namespace VendorOrderTracker.Controllers
 {
-  public class VendorController : Controller
+  public class VendorsController : Controller
   {
 
     [HttpGet("/vendors")]
@@ -34,7 +34,7 @@ namespace VendorOrderTracker.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor selectedVendor = Vendor.Find(id);
       List<Order> vendorOrders = selectedVendor.Orders;
-      model.Add("vendor", selectedVendor);
+      model.Add("vendors", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
     }
@@ -47,7 +47,7 @@ namespace VendorOrderTracker.Controllers
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
-      model.Add("vendor", foundVendor);
+      model.Add("vendors", foundVendor);
       return View("Show", model);
     }
 
