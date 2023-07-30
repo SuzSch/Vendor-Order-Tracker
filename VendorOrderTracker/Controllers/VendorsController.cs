@@ -9,7 +9,7 @@ namespace VendorOrderTracker.Controllers
   {
 
     [HttpGet("/vendors")]
-    public ActionResult Index()
+    public IActionResult Index()
     {
       List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
@@ -22,9 +22,10 @@ namespace VendorOrderTracker.Controllers
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string name, string type, string email, string phoneNumber, int id)
+    public ActionResult Create(string name, string type, string email, string phoneNumber)
     {
-      Vendor newVendor = new Vendor(name, type, email, phoneNumber, id);
+      Vendor newVendor = new Vendor(name, type, email, phoneNumber);
+
       return RedirectToAction("Index");
     }
 

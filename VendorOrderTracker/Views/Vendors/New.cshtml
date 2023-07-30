@@ -11,8 +11,23 @@
 <body>
   <h1>Add a new vendor</h1>
   <form action="/vendors" method="post">
-    <label for="vendorName">Add a new vendor</label>
-    <input id="vendorName" name="vendorName" type="text">
+
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text">
+
+    <label for="type">Type of business</label>
+    <select id="type" name="type">
+      <option value="Cafe">Cafe</option>
+      <option value="Restaurant">Restaurant</option>
+      <option value="Grocery">Grocery</option>
+    </select>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="text">
+
+    <label for="phoneNumber">Phone Number</label>
+    <input id="phoneNumber" name="phoneNumber" type="text">
+
     <button type="submit">Submit new vendor</button>
   </form>
 
